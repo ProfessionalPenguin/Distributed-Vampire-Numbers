@@ -1,0 +1,71 @@
+
+Execution Video Sample: https://www.youtube.com/watch?v=iFgVgUR0GoM&feature=youtu.be
+The actors are distributed over two machines in this example.
+The load is split into half over both the machines and each actor is responsible to calculate for a range of 20000 numbers.
+There is a dynamic supervisor on each machine spawning and keeping track of each actor process.
+
+The execution for this sample size on a single machine took ~ 2m10 secs (8 cores, details in original project)
+
+The execution for this sample size on two machine took ~ 1m4 secs (16 cores , as seen in the video)
+
+
+
+The steps to execute this program. 
+
+Change directory into the folder containing the .ex files
+
+Open terminal on machine 1
+
+use "iex --name name1@ip-address1 --cookie vamp"
+
+
+Open terminal on machine 2
+
+use "iex --name name2@ip-address2 --cookie vamp"
+
+
+
+Machine 1
+
+Use these commands to compile the files and execute the program
+
+c("results.ex")
+c("vampireworkers.ex")
+c("workersupervisor.ex")
+c("vampire.ex")
+c("vampireworkers2.ex")
+c("workersupervisor2.ex")
+
+// start results server
+Project.Results.start_link([])
+
+//start supervisor on this machine
+Project.WorkerSupervisor.start_link([])
+
+// start vampire server
+Project.Vampire.start_link({10000000,20000000,0})
+
+Machine 2
+
+
+Use these commands to compile the files and execute the program
+
+Node.connect(:"name1@ip-address1")
+
+c("results.ex")
+c("vampireworkers.ex")
+c("workersupervisor.ex")
+c("vampire.ex")
+c("vampireworkers2.ex")
+c("workersupervisor2.ex")
+
+//start supervisor on this machine
+Project.WorkerSupervisor2.start_link([])
+
+// Execute the vampire server which was started on the other machine
+Project.Vampire.start_link({10000000,20000000,0})
+
+
+
+
+
