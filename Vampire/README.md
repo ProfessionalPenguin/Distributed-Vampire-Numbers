@@ -22,8 +22,8 @@ Or else: [Elixir Installation Instruction](http://elixir-lang.org/install.html).
 
 #### Run the project
 
-    Change Directory and enter the "project" folder
-    cd ..\project
+    Change Directory and enter the "Vampire" folder
+    cd ..\Vampire
     
     $ time ARG1=10000000 ARG2=20000000 mix run --no-halt
     where ARG1 and ARG2(global variables) represent the start and end range
