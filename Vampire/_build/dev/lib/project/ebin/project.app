@@ -1,0 +1,10 @@
+{application,project,
+             [{applications,[kernel,stdlib,elixir,logger]},
+              {description,"project"},
+              {modules,['Elixir.Project','Elixir.Project.Proj1',
+                        'Elixir.Project.Results','Elixir.Project.Vampire',
+                        'Elixir.Project.VampireWorkers',
+                        'Elixir.Project.WorkerSupervisor']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {mod,{'Elixir.Project.Proj1',[]}}]}.
