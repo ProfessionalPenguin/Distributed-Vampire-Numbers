@@ -1,7 +1,5 @@
 # Vampire Numbers
 
-COP5615 - Distributed Operating Systems Principles Project #1
-
 The goal of this first project is to use Elixir and the actor model to build a good solution to this problem that runs well on multi-core machines.
 
 ## Developers
