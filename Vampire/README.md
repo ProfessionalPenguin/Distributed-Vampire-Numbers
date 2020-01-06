@@ -6,8 +6,8 @@ The goal of this first project is to use Elixir and the actor model to build a g
 
 ## Developers
 
-* **Rahul Singh Bhatia** - *UFID: 59930121*
-* **Foram Bipinchandra Nirmal** - *UFID: 62199417*
+* **Rahul Singh Bhatia** - *UFID: ########*
+
 
 ### Prerequisites
 #### Erlang
